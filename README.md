@@ -1,88 +1,88 @@
 # zabbix_monitor_template
-基于zabbix 4.0 监控脚本，通过snmp、ipmi方式实现
 
-设备监控模板继承基类模板，设备监控模板直接关联主机
+These templates are used in zabbix 4.0，based on snmp、ipmi.
 
-计划实现监控设备包括：
+The equipment(设备) templates are inherted from base(基类）templates, so the base template must be import first.
 
+The templates below are planed to be complete
 
-########网络设备########
+########Network Device########
 
-思科	ASA-5585
+Cisco	ASA-5585
 
-思科	C6509
+Cisco	C6509
 
-思科	Nexus-9500
+Cisco	Nexus-9500 (complete)
 
-思科	Nexus-9200
+Cisco	Nexus-9200 (complete)
 
-思科	Nexus-9300
+Cisco	Nexus-9300 (complete)
 
-华三	F1000
+H3C	F1000 (complete)
 
-华三	M9000
+H3C	M9000 (complete)
 
-华三	S3500
+H3C	S3500 (complete)
 
-华三	S5500
+H3C	S5500 (complete)
 
-华三	S5800
+H3C	S5800 (complete)
 
-华三	S6800
+H3C	S6800 (complete)
 
-华三	S7600
+H3C	S7600 (complete)
 
-华三	S9800
+H3C	S9800 (complete)
 
-华三	S12500
+H3C	S12500 (complete)
 
-华为	Eudemon200E-N
+Huawei	Eudemon200E-N (complete)
 
-华为	CloudEngine-6800
+Huawei	CloudEngine-6800 (complete)
 
-华为	CloudEngine-12800
+Huawei	CloudEngine-12800 (complete)
 
-华为	S3300
+Huawei	S3300 (complete)
 
-华为	S9300
+Huawei	S9300 (complete)
 
-华为	S5300
+Huawei	S5300 (complete)
 
-瞻博	SRX650
+Juniper	SRX650 (complete)
 
-瞻博	SRX3600
+Juniper	SRX3600 (complete)
 
-F5	LTM-C2400
+F5	LTM-C2400 (complete)
 
-########服务器########
+########Server########
 
-戴尔	PowerEdge-M1000E
+DELL	PowerEdge-M1000E (complete)
 
-惠普	BladeSystem-C7000
+HP	BladeSystem-C7000 (complete)
 
-思科	UCS-6200
+Cisco	UCS-6200 (complete)
 
-华为	FusionServer-E9000
+Huawei	FusionServer-E9000 (complete)
 
 IBM	BCH
 
-思科	UCS-B460-M4
+Cisco	UCS-B460-M4
 
-戴尔	PowerEdge-M820
+DELL	PowerEdge-M820
 
-戴尔	PowerEdge-M910
+DELL	PowerEdge-M910
 
-惠普	ProLiant-BL460C-Gen5
+HP	ProLiant-BL460C-Gen5
 
-惠普	ProLiant-BL660
+HP	ProLiant-BL660
 
-惠普	ProLiant-BL680
+HP	ProLiant-BL680
 
-惠普	ProLiant-BL680C-Gen5
+HP	ProLiant-BL680C-Gen5
 
-华为	FusionServer-CH242
+Huawei	FusionServer-CH242
 
-华为	FusionServer-CH240
+Huawei	FusionServer-CH240
 
 IBM	BCH
 
@@ -90,45 +90,43 @@ IBM	HX5
 
 IBM	HS22
 
-戴尔	PowerEdge-R720
+DELL	PowerEdge-R720
 
-惠普	ProLiant-DL380
+HP	ProLiant-DL380
 
-惠普	ProLiant-XL400
+HP	ProLiant-XL400
 
-华为	FusionServer-RH2288
+Huawei FusionServer-RH2288
 
-华为	FusionServer-RH5885
+Huawei	FusionServer-RH5885
 
-浪潮	NF8460M3
+Inspur	NF8460M3
 
-曙光	I620
+Sugon I620
 
-曙光	I620-G20
+Sugon	I620-G20
 
-曙光	I640R
+Sugon	I640R
 
-曙光	I840
+Sugon	I840
 
-中兴	ZXCLOUD-R8500
+ZTE	ZXCLOUD-R8500
 
-########光纤交换机########
+########Fibre Switch########
 
-博科	6510
+Brocade	6510 (complete)
 
-EMC	CONNECTRIX-ED-DCX-B
+EMC	CONNECTRIX-ED-DCX-B (complete)
 
-华为	OceanStor-SNS5384
+Huawei	OceanStor-SNS5384 (complete)
 
-华为	OceanStor-SNS2248
+Huawei	OceanStor-SNS2248 (complete)
 
-思科	MDS-9100
+Cisco	MDS-9100 (complete)
 
-思科	MDS-9500
+Cisco	MDS-9500 (complete)
 
-惠普	StorageWorks-AM868
-
-########磁盘阵列########
+########Disk Array########
 
 EMC	VNX-5100
 
@@ -136,27 +134,25 @@ EMC	CX4-480
 
 EMC	VNX-5700
 
-日立	AMS2100
+Hitachi	AMS2100
 
-日立	AMS2300
+Hitachi	AMS2300
 
-日立	VSP-G400
+Hitachi	VSP-G400 (complete)
 
-日立	HUS-130
+Hitachi	HUS-150 (complete)
 
-日立	HUS-150
+HP	StorageWorks-EVA4400
 
-惠普	StorageWorks-EVA4400
+HP	StorageWorks-EVA6400
 
-惠普	StorageWorks-EVA6400
+Sugon	ParaStor200
 
-曙光	ParaStor200
+Huawei	OceanStor-5300v3 (complete)
 
-华为	OceanStor-5300v3
+Huawei	OceanStor-5600 (complete)
 
-华为	OceanStor-5600
-
-华为	OceanStor-6800v3
+Huawei	OceanStor-6800v3 (complete)
 
 IBM	TotalStorage-DS5100
 

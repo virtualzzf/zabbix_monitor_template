@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2019-03-27T12:38:04Z</date>
+    <date>2019-04-25T01:57:04Z</date>
     <groups>
         <group>
             <name>存储监控模板</name>
@@ -11,6 +11,9 @@
         </group>
         <group>
             <name>网络设备监控模板</name>
+        </group>
+        <group>
+            <name>软件监控模板</name>
         </group>
     </groups>
     <templates>
@@ -30,20 +33,20 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_BackplaneFusionSwitch_Huawei</name>
+                    <name>base_Huawei_BackplaneFusionSwitch_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_BackplaneNetSwitch_HP_VC-Flex-10</template>
-            <name>监控_背板网络交换机_惠普_VC-Flex-10（待完善）</name>
+            <template>monitor_BackplaneNetSwitch_HP_VC-Flex-10-10D</template>
+            <name>监控_背板网络交换机_惠普_VC-Flex-10/10D（待完善）</name>
             <description/>
             <groups>
                 <group>
@@ -57,17 +60,17 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_BackplaneSANSwitch_Cisco_MDS-8G-FC-HP</template>
-            <name>监控_背板SAN交换机_思科_MDS-8G-FC（待完善）</name>
+            <template>monitor_BackplaneSANSwitch_Cisco_MDS-8-Gb-12-port</template>
+            <name>监控_背板SAN交换机_思科_MDS-8-Gb-12-port（待完善）</name>
             <description/>
             <groups>
                 <group>
@@ -81,13 +84,37 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_BackplaneSANSwitch_HP_B-series-8-12c</template>
+            <name>监控_背板SAN交换机_惠普_B-series-8/12c（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -108,10 +135,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_BladeChassis_Dell</name>
+                    <name>base_Dell_BladeChassis_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -132,10 +159,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_BladeChassis_HP</name>
+                    <name>base_HP_BladeChassis_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -156,10 +183,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_BladeChassis_Huawei</name>
+                    <name>base_Huawei_BladeChassis_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -173,78 +200,38 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_IBM_BladeChassis_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_BladeServer_Cisco_UCS-B420</template>
+            <name>监控_刀片服务器_思科_UCS-B420（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -265,7 +252,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -286,7 +273,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -307,7 +294,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -321,99 +308,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>5</type>
-                            <params>DISMAN-EVENT-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapOID.0.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>NMP-COMMUNITY-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapEnterprise.*\n
- </params>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -427,99 +329,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>5</type>
-                            <params>DISMAN-EVENT-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapOID.0.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>NMP-COMMUNITY-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapEnterprise.*\n
- </params>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -533,99 +350,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing>
-                        <step>
-                            <type>5</type>
-                            <params>DISMAN-EVENT-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapOID.0.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>NMP-COMMUNITY-MIB.*\n
- </params>
-                        </step>
-                        <step>
-                            <type>5</type>
-                            <params>SNMPv2-MIB::snmpTrapEnterprise.*\n
- </params>
-                        </step>
-                    </preprocessing>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -646,7 +378,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -667,7 +399,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -688,7 +420,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_IBM_BladeChassis_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -709,7 +444,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -730,7 +465,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -815,7 +550,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -900,7 +638,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -985,7 +723,92 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_DiskArray_Fujitsu_ETERNUS-DX8000</template>
+            <name>监控_磁盘阵列_富士通_ETERNUS-DX8000（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>存储监控模板</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>trap消息</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>trap消息</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;&quot;]</key>
+                    <delay>0</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>trap消息</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1070,7 +893,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1155,7 +978,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1240,7 +1063,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1325,7 +1148,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1410,10 +1233,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_DiskArray_Hitachi_DF</name>
+                    <name>base_Hitachi_DF_DiskArray_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1434,10 +1257,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_DiskArray_Hitachi</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1458,10 +1278,34 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_DiskArray_Hitachi</name>
+                    <name>base_Hitachi_DiskArray_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_DiskArray_Hitachi_VSP-G800</template>
+            <name>监控_磁盘阵列_日立_VSP-G800（巡检待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>存储监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_Hitachi_DiskArray_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1546,7 +1390,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1631,7 +1475,28 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_DiskArray_Huawei_OceanStor-2600</template>
+            <name>监控_磁盘阵列_华为_OceanStor-2600</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>存储监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1716,7 +1581,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1801,7 +1666,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1822,10 +1687,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_DiskArray_Huawei</name>
+                    <name>base_Huawei_DiskArray_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1910,7 +1775,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -1995,7 +1860,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2080,7 +1945,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2099,73 +1964,16 @@
                     <name>trap消息</name>
                 </application>
             </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_NetApp_DiskArray_base_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2250,7 +2058,7 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2271,16 +2079,46 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_FabricInterconnect_Cisco</name>
+                    <name>base_Cisco_FabricInterconnect_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_FabricInterconnect_Cisco_UCS-6300</template>
+            <name>监控_交换矩阵_思科_UCS-6300（trap待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_Cisco_FabricInterconnect_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2301,16 +2139,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_trap_monitor_template</name>
+                    <name>base_Cisco_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2331,19 +2169,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2364,22 +2202,22 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_firewall_session_monitor_template</name>
+                    <name>base_H3C_firewall_session_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2400,19 +2238,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_firewall_base_monitor_template</name>
+                    <name>base_Huawei_firewall_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2433,19 +2271,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_SRX_firewall_base_monitor_template</name>
+                    <name>base_Juniper_SRX_firewall_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_trap_monitor_template</name>
+                    <name>base_Juniper_trap_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2466,19 +2304,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_SRX_firewall_base_monitor_template</name>
+                    <name>base_Juniper_SRX_firewall_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_trap_monitor_template</name>
+                    <name>base_Juniper_trap_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2499,19 +2337,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_SRX_firewall_base_monitor_template</name>
+                    <name>base_Juniper_SRX_firewall_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Juniper_trap_monitor_template</name>
+                    <name>base_Juniper_trap_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2532,23 +2370,23 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Cisco_trap_monitor_template</name>
+                    <name>base_Cisco_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_FusionSwitch_Cisco_Nexus-9508</template>
-            <name>监控_融合交换机_思科_Nexus-9508（待完善）</name>
+            <template>monitor_FusionSwitch_Cisco_Nexus-9500</template>
+            <name>监控_融合交换机_思科_Nexus-9500（待完善）</name>
             <description/>
             <groups>
                 <group>
@@ -2562,16 +2400,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Cisco_trap_monitor_template</name>
+                    <name>base_Cisco_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2592,16 +2430,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Cisco_trap_monitor_template</name>
+                    <name>base_Cisco_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2622,16 +2460,46 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_Cisco_trap_monitor_template</name>
+                    <name>base_Cisco_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_FusionSwitch_H3C_S6900</template>
+            <name>监控_融合交换机_华三_S6900</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_H3C_trap_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2652,19 +2520,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2685,19 +2553,19 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2718,16 +2586,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_trap_monitor_template</name>
+                    <name>base_Huawei_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2748,26 +2616,26 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_trap_monitor_template</name>
+                    <name>base_Huawei_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_LoadBalancer_F5_GTM-6900</template>
-            <name>监控模板_负载均衡器_F5_GTM-6900（待完善）</name>
+            <template>monitor_loadbalancer_Citrix_NetScaler-10500</template>
+            <name>监控_负载均衡器_思杰_NetScaler-10500（待完善）</name>
             <description/>
             <groups>
                 <group>
@@ -2781,10 +2649,172 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_F5_trap_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_LoadBalancer_F5_GTM-6900</template>
+            <name>监控_负载均衡器_F5_GTM-6900（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_loadbalancer_F5_LTM-10000</template>
+            <name>监控_负载均衡器_F5_LTM-10000</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_loadbalancer_F5_LTM-C2400</template>
+            <name>监控_负载均衡器_F5_LTM-C2400</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_loadbalancer_F5_LTM-C3400</template>
+            <name>监控_负载均衡器_F5_LTM-C3400</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_loadbalancer_F5_LTM-C3900</template>
+            <name>监控_负载均衡器_F5_LTM-C3900</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_loadbalancer_F5_LTM-C4800</template>
+            <name>监控_负载均衡器_F5_LTM-C4800</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
                 </template>
             </templates>
             <screens/>
@@ -2805,16 +2835,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2835,16 +2865,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2865,16 +2895,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2895,23 +2925,23 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
             <template>monitor_NetSwitch_H3C_S7600</template>
-            <name>监控_网络交换机_华三_S7600（待验证）</name>
+            <name>监控_网络交换机_华三_S7600</name>
             <description/>
             <groups>
                 <group>
@@ -2925,16 +2955,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_H3C_networkdevice_base_monitor_template</name>
+                    <name>base_H3C_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_H3C_trap_monitor_template</name>
+                    <name>base_H3C_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2955,16 +2985,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_trap_monitor_template</name>
+                    <name>base_Huawei_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -2985,16 +3015,16 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_trap_monitor_template</name>
+                    <name>base_Huawei_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3015,19 +3045,154 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_HW_networkdevice_base_monitor_template</name>
+                    <name>base_Huawei_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_HW_trap_monitor_template</name>
+                    <name>base_Huawei_trap_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_traffic_monitor_template</name>
+                    <name>base_interfaces_traffic_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_NetSwitch_KAH_CC9032</template>
+            <name>监控_网络交换机_康海_CC9032(待完善)</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_oadbalancer_F5_LTM-6900</template>
+            <name>监控_负载均衡器_F5_LTM-6900</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>网络设备监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_F5_loadbalancer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>template_base_F5_trap_monitor</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_OperationSystem_linux_rhel-7.2</template>
+            <name>监控_操作系统_linux_rhel-7.2</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>软件监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_OperationSystem_linux_rhel-7.4</template>
+            <name>监控_操作系统_linux_rhel-7.4</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>软件监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Dell_PowerEdge-C6320</template>
+            <name>监控_机架服务器_戴尔_PowerEdge-C6320（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Dell_PowerEdge-C6420</template>
+            <name>监控_机架服务器_戴尔_PowerEdge-C6420（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3041,78 +3206,59 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Dell_RackChassis_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Dell_PowerEdge-R730</template>
+            <name>监控_机架服务器_戴尔_PowerEdge-R730（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Dell_PowerEdge-R940</template>
+            <name>监控_机架服务器_戴尔_PowerEdge-R940（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3126,78 +3272,17 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_HP_RackServer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3211,78 +3296,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3296,78 +3317,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3381,78 +3338,38 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_HW_RackServer_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Inspur_NF5280</template>
+            <name>监控_机架服务器_浪潮_NF5280（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3466,78 +3383,56 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Inspur_NF8480</template>
+            <name>监控_机架服务器_浪潮_NF8480（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_RackServer_Sugon_CX50</template>
+            <name>监控_机架服务器_曙光_CX50（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>服务器监控模板</name>
+                </group>
+            </groups>
+            <applications/>
+            <items/>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3558,10 +3453,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_RackServer_Sugon</name>
+                    <name>Base_Sugon_RackServer_base_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3575,78 +3470,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3660,78 +3491,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3745,78 +3512,14 @@
                     <name>服务器监控模板</name>
                 </group>
             </groups>
-            <applications>
-                <application>
-                    <name>trap消息</name>
-                </application>
-            </applications>
-            <items>
-                <item>
-                    <name>trap消息</name>
-                    <type>17</type>
-                    <snmp_community/>
-                    <snmp_oid/>
-                    <key>snmptrap[&quot;&quot;]</key>
-                    <delay>0</delay>
-                    <history>30d</history>
-                    <trends>0</trends>
-                    <status>0</status>
-                    <value_type>2</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>trap消息</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                    <preprocessing/>
-                    <jmx_endpoint/>
-                    <timeout>3s</timeout>
-                    <url/>
-                    <query_fields/>
-                    <posts/>
-                    <status_codes>200</status_codes>
-                    <follow_redirects>1</follow_redirects>
-                    <post_type>0</post_type>
-                    <http_proxy/>
-                    <headers/>
-                    <retrieve_mode>0</retrieve_mode>
-                    <request_method>0</request_method>
-                    <output_format>0</output_format>
-                    <allow_traps>0</allow_traps>
-                    <ssl_cert_file/>
-                    <ssl_key_file/>
-                    <ssl_key_password/>
-                    <verify_peer>0</verify_peer>
-                    <verify_host>0</verify_host>
-                    <master_item/>
-                </item>
-            </items>
+            <applications/>
+            <items/>
             <discovery_rules/>
             <httptests/>
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3901,13 +3604,13 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_SANSwitch_Brocade</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -3992,10 +3695,13 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -4080,13 +3786,13 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_Cisco_networkdevice_base_monitor_template</name>
+                    <name>base_Cisco_networkdevice_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -4171,13 +3877,104 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_SANSwitch_Brocade</name>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_SANSwitch_H3C_B8518</template>
+            <name>监控_SAN交换机_华三_B8518（待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>存储监控模板</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>trap消息</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>trap消息</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;&quot;]</key>
+                    <delay>0</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>trap消息</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -4262,10 +4059,10 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -4350,10 +4147,104 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
+                </template>
+            </templates>
+            <screens/>
+        </template>
+        <template>
+            <template>monitor_SANSwitch_Huawei_OceanStor-SNS5192</template>
+            <name>监控_SAN交换机_华为_OceanStor-SNS5192（巡检待完善）</name>
+            <description/>
+            <groups>
+                <group>
+                    <name>存储监控模板</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>trap消息</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>trap消息</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;&quot;]</key>
+                    <delay>0</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>trap消息</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <httptests/>
+            <macros/>
+            <templates>
+                <template>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
+                </template>
+                <template>
+                    <name>base_ICMP_ping_template</name>
+                </template>
+                <template>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
@@ -4438,24 +4329,24 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_Brocade_SANSwitch_base_monitor_template</name>
                 </template>
                 <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
                 <template>
-                    <name>Base_SANSwitch_Brocade</name>
+                    <name>base_interfaces_status_monitor_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_template_loadbalancer_Citrix_NetScaler10500</template>
-            <name>监控模板-负载均衡器-思杰-NetScaler10500（待完善）</name>
+            <template>monitor_Virtualization_ESXi_6.0</template>
+            <name>监控_虚拟化_ESXi_6.0</name>
             <description/>
             <groups>
                 <group>
-                    <name>网络设备监控模板</name>
+                    <name>软件监控模板</name>
                 </group>
             </groups>
             <applications/>
@@ -4465,21 +4356,18 @@
             <macros/>
             <templates>
                 <template>
-                    <name>base_ICMP_Ping_template</name>
-                </template>
-                <template>
-                    <name>Base_interfaces_status_monitor_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_template_loadbalancer_F5_6900</template>
-            <name>监控模板-负载均衡器-F5-6900</name>
+            <template>monitor_Virtualization_ESXi_6.5</template>
+            <name>监控_虚拟化_ESXi_6.5</name>
             <description/>
             <groups>
                 <group>
-                    <name>网络设备监控模板</name>
+                    <name>软件监控模板</name>
                 </group>
             </groups>
             <applications/>
@@ -4489,123 +4377,171 @@
             <macros/>
             <templates>
                 <template>
-                    <name>Base_F5_loadbalancer_base_monitor_template</name>
-                </template>
-                <template>
-                    <name>Base_F5_trap_monitor_template</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
+                    <name>base_ICMP_ping_template</name>
                 </template>
             </templates>
             <screens/>
         </template>
         <template>
-            <template>monitor_template_loadbalancer_F5_C2400</template>
-            <name>监控模板-负载均衡器-F5-C2400</name>
+            <template>monitor_Virtualization_VCenter_6.0</template>
+            <name>监控_虚拟化_Vcenter_6.0</name>
             <description/>
             <groups>
                 <group>
-                    <name>网络设备监控模板</name>
+                    <name>软件监控模板</name>
                 </group>
             </groups>
-            <applications/>
-            <items/>
+            <applications>
+                <application>
+                    <name>trap消息</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>trap消息</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;&quot;]</key>
+                    <delay>0</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>trap消息</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
+                </item>
+            </items>
             <discovery_rules/>
             <httptests/>
             <macros/>
-            <templates>
-                <template>
-                    <name>Base_F5_loadbalancer_base_monitor_template</name>
-                </template>
-                <template>
-                    <name>Base_F5_trap_monitor_template</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
-                </template>
-            </templates>
+            <templates/>
             <screens/>
         </template>
         <template>
-            <template>monitor_template_loadbalancer_F5_C3400</template>
-            <name>监控模板-负载均衡器-F5-C3400</name>
+            <template>monitor_Virtualization_VCenter_6.5</template>
+            <name>监控_虚拟化_Vcenter_6.5</name>
             <description/>
             <groups>
                 <group>
-                    <name>网络设备监控模板</name>
+                    <name>软件监控模板</name>
                 </group>
             </groups>
-            <applications/>
-            <items/>
+            <applications>
+                <application>
+                    <name>trap消息</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>trap消息</name>
+                    <type>17</type>
+                    <snmp_community/>
+                    <snmp_oid/>
+                    <key>snmptrap[&quot;&quot;]</key>
+                    <delay>0</delay>
+                    <history>30d</history>
+                    <trends>0</trends>
+                    <status>0</status>
+                    <value_type>2</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description/>
+                    <inventory_link>0</inventory_link>
+                    <applications>
+                        <application>
+                            <name>trap消息</name>
+                        </application>
+                    </applications>
+                    <valuemap/>
+                    <logtimefmt/>
+                    <preprocessing/>
+                    <jmx_endpoint/>
+                    <timeout>3s</timeout>
+                    <url/>
+                    <query_fields/>
+                    <posts/>
+                    <status_codes>200</status_codes>
+                    <follow_redirects>1</follow_redirects>
+                    <post_type>0</post_type>
+                    <http_proxy/>
+                    <headers/>
+                    <retrieve_mode>0</retrieve_mode>
+                    <request_method>0</request_method>
+                    <output_format>0</output_format>
+                    <allow_traps>0</allow_traps>
+                    <ssl_cert_file/>
+                    <ssl_key_file/>
+                    <ssl_key_password/>
+                    <verify_peer>0</verify_peer>
+                    <verify_host>0</verify_host>
+                    <master_item/>
+                </item>
+            </items>
             <discovery_rules/>
             <httptests/>
             <macros/>
-            <templates>
-                <template>
-                    <name>Base_F5_loadbalancer_base_monitor_template</name>
-                </template>
-                <template>
-                    <name>Base_F5_trap_monitor_template</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
-                </template>
-            </templates>
-            <screens/>
-        </template>
-        <template>
-            <template>monitor_template_loadbalancer_F5_C3900</template>
-            <name>监控模板-负载均衡器-F5-C3900</name>
-            <description/>
-            <groups>
-                <group>
-                    <name>网络设备监控模板</name>
-                </group>
-            </groups>
-            <applications/>
-            <items/>
-            <discovery_rules/>
-            <httptests/>
-            <macros/>
-            <templates>
-                <template>
-                    <name>Base_F5_loadbalancer_base_monitor_template</name>
-                </template>
-                <template>
-                    <name>Base_F5_trap_monitor_template</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
-                </template>
-            </templates>
-            <screens/>
-        </template>
-        <template>
-            <template>monitor_template_loadbalancer_F5_C4800</template>
-            <name>监控模板-负载均衡器-F5-C4800</name>
-            <description/>
-            <groups>
-                <group>
-                    <name>网络设备监控模板</name>
-                </group>
-            </groups>
-            <applications/>
-            <items/>
-            <discovery_rules/>
-            <httptests/>
-            <macros/>
-            <templates>
-                <template>
-                    <name>Base_F5_loadbalancer_base_monitor_template</name>
-                </template>
-                <template>
-                    <name>Base_F5_trap_monitor_template</name>
-                </template>
-                <template>
-                    <name>base_ICMP_Ping_template</name>
-                </template>
-            </templates>
+            <templates/>
             <screens/>
         </template>
     </templates>

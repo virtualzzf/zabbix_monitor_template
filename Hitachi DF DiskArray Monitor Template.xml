@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2021-06-18T13:02:26Z</date>
+    <date>2021-06-20T09:56:18Z</date>
     <groups>
         <group>
             <name>Templates/DiskArray</name>
@@ -146,7 +146,12 @@ device : AMS 2100，AMS  2300，HUS130，HUS150</description>
             </items>
             <discovery_rules/>
             <httptests/>
-            <macros/>
+            <macros>
+                <macro>
+                    <macro>{$CLOUD_SNMP_COMMUNITY}</macro>
+                    <value>public</value>
+                </macro>
+            </macros>
             <templates/>
             <screens/>
         </template>

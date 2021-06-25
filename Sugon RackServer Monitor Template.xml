@@ -11,7 +11,7 @@
         <template>
             <template>Sugon_RackServer_monitor_template</template>
             <name>Sugon RackServer Monitor Template</name>
-            <description>Hitachi_DiskArray_monitor_template&#13;
+            <description>Sugon RackServer Monitor Template&#13;
 Known Issues: In some version, the item &quot;nicHealthAllStatus&quot; may be disable&#13;
 device : H620-G30, I620-G30, I840-G30</description>
             <groups>
